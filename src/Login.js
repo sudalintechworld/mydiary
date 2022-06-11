@@ -32,7 +32,6 @@ const Login = () => {
         window.alert("반가워!"); 
     };
 
-
 // const[name, setName] = React.useState(u.data().name);
 
     function gohome(){

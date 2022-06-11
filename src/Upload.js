@@ -15,18 +15,20 @@ const inputText = React.useRef(null);
 
 const navigate = useNavigate();
 const dispatch = useDispatch();
-const new_content = useSelector(state => state.diary);
+const name = useSelector(state => state.diary.name);
+//console.log(name)
 const uploadContentList = () => {
+    //console.log(inputText.current.value)
     dispatch(uploadData(
         {
-            id : "아이디아이디",
-            date: "날짜날짜",
+            id : name,
+            date: "날짜",
             text: inputText.current.value,
             img: file_link_ref.current.value,
         }
     ));
     };
-    
+   
 const fileInput = async () => {
     const user_content= await addDoc(collection(db, "users"),{
     image_url: file_link_ref.current.url,
@@ -42,7 +44,7 @@ const uploadFB = async(e) => {
         // console.log(file_url);
         file_link_ref.current = {url: file_url};
 };
-console.log(uploadContentList)
+
 
     return (
         <>
@@ -56,7 +58,7 @@ console.log(uploadContentList)
                         className="text"
                         type = "text" 
                         ref={inputText}/>
-             {new_content.name} </TextInput>
+              </TextInput>
                     </TextWrap>
                     
                     <ImgWrap>

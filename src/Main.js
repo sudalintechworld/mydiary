@@ -4,7 +4,7 @@ import styled from "styled-components"
 import ContentBox from "./ContentBox";
 import Upload from "./Upload";
 import {db} from "./firebase";
-import {collection, gedDoc, getDocs} from "firesbase/firestore";
+// import {collection, gedDoc, getDocs} from "firesbase/firestore";
 
 import{useSelector, useDispatch} from "react-redux";
 import {uploadData} from "./redux/modules/myDiary" ;
@@ -20,7 +20,7 @@ const Main = () => {
     const dispatch = useDispatch();   
 
     React.useEffect(() => {
-        console.log(db)
+        //console.log(db)
         
       
     },[]);
